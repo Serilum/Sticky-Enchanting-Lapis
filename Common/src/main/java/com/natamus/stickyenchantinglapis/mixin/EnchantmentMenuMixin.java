@@ -1,6 +1,7 @@
 package com.natamus.stickyenchantinglapis.mixin;
 
 import com.natamus.collective.implementations.networking.api.Dispatcher;
+import com.natamus.stickyenchantinglapis.data.Variables;
 import com.natamus.stickyenchantinglapis.networking.packets.ToClientReceiveLapisCountPacket;
 import com.natamus.stickyenchantinglapis.util.Util;
 import net.minecraft.server.level.ServerLevel;
@@ -20,6 +21,8 @@ import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+
+import java.util.UUID;
 
 @Mixin(value = EnchantmentMenu.class, priority = 1001)
 public class EnchantmentMenuMixin {
@@ -66,8 +69,17 @@ public class EnchantmentMenuMixin {
 				Dispatcher.sendToClientsInLevel(new ToClientReceiveLapisCountPacket(enchantingTableBlockEntity.getBlockPos(), lapisCount), (ServerLevel)level);
 
 				for (Player otherPlayer : level.getServer().getPlayerList().getPlayers()) {
-					if (otherPlayer.getUUID().equals(this.player.getUUID())) {
+					UUID otherPlayerUUID = otherPlayer.getUUID();
+					if (otherPlayerUUID.equals(this.player.getUUID())) {
 						continue;
+					}
+
+					if (!Variables.lastEnchantingTableInteraction.containsKey(otherPlayerUUID)) {
+						return;
+					}
+
+					if (!enchantingTableBlockEntity.getBlockPos().equals(Variables.lastEnchantingTableInteraction.get(otherPlayerUUID))) {
+						return;
 					}
 
 					if (otherPlayer.containerMenu instanceof EnchantmentMenu) {

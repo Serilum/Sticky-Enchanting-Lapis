@@ -1,5 +1,6 @@
 package com.natamus.stickyenchantinglapis.util;
 
+import com.natamus.stickyenchantinglapis.data.Variables;
 import com.natamus.stickyenchantinglapis.mixin.EnchantmentMenuAccessor;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
@@ -11,10 +12,22 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.EnchantingTableBlockEntity;
 
+import java.util.UUID;
+
 public class ClientUtil {
 	public static void syncLapisToClients(BlockPos enchantingTableBlockPos, int lapisCount) {
 		Player player = Minecraft.getInstance().player;
 		if (player != null) {
+			UUID playerUUID = player.getUUID();
+
+			if (!Variables.lastEnchantingTableInteraction.containsKey(playerUUID)) {
+				return;
+			}
+
+			if (!enchantingTableBlockPos.equals(Variables.lastEnchantingTableInteraction.get(playerUUID))) {
+				return;
+			}
+
 			Level level = player.level();
 
 			BlockEntity blockEntity = level.getBlockEntity(enchantingTableBlockPos);
