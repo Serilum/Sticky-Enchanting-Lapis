@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "stickyenchantinglapis",
-  "version": "1.2",
+  "version": "1.3",
 
   "name": "Sticky Enchanting Lapis",
   "description": "Allows lapis lazuli to remain in the enchanting table and be shared among players.",
@@ -26,7 +26,7 @@
     "fabric": "*",
     "minecraft": ">=1.20",
     "java": ">=21",
-    "collective": ">=7.71"
+    "collective": ">=7.78"
   },
 
   "custom": {
