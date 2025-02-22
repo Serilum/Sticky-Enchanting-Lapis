@@ -11,29 +11,38 @@ import net.minecraft.resources.ResourceLocation;
 public class ToClientReceiveLapisCountPacket {
 	public static final ResourceLocation CHANNEL = ResourceLocation.fromNamespaceAndPath(Reference.MOD_ID, "to_client_receive_lapis_count_packet");
 
-	private final BlockPos enchantingTableBlockPos;
 	private final int lapisCount;
+	private final int enchantingTableXPosition;
+	private final int enchantingTableYPosition;
+	private final int enchantingTableZPosition;
 
-	public ToClientReceiveLapisCountPacket(BlockPos enchantingTableBlockPosIn, int lapisCountIn) {
-		this.enchantingTableBlockPos = enchantingTableBlockPosIn;
+	public ToClientReceiveLapisCountPacket(int lapisCountIn, int enchantingTableXPositionIn, int enchantingTableYPositionIn, int enchantingTableZPositionIn) {
 		this.lapisCount = lapisCountIn;
+		this.enchantingTableXPosition = enchantingTableXPositionIn;
+		this.enchantingTableYPosition = enchantingTableYPositionIn;
+		this.enchantingTableZPosition = enchantingTableZPositionIn;
 	}
 
 	public static ToClientReceiveLapisCountPacket decode(FriendlyByteBuf buf) {
-		BlockPos enchantingTableBlockPosIn = buf.readBlockPos();
 		int lapisCountIn = buf.readInt();
-		return new ToClientReceiveLapisCountPacket(enchantingTableBlockPosIn, lapisCountIn);
+		int enchantingTableXPosition = buf.readInt();
+		int enchantingTableYPosition = buf.readInt();
+		int enchantingTableZPosition = buf.readInt();
+
+		return new ToClientReceiveLapisCountPacket(lapisCountIn, enchantingTableXPosition, enchantingTableYPosition, enchantingTableZPosition);
 	}
 
 	public void encode(FriendlyByteBuf buf) {
-		buf.writeBlockPos(enchantingTableBlockPos);
 		buf.writeInt(lapisCount);
+		buf.writeInt(enchantingTableXPosition);
+		buf.writeInt(enchantingTableYPosition);
+		buf.writeInt(enchantingTableZPosition);
 	}
 
 	public static void handle(PacketContext<ToClientReceiveLapisCountPacket> ctx) {
 		if (ctx.side().equals(Side.CLIENT)) {
 			ToClientReceiveLapisCountPacket packet = ctx.message();
-			ClientUtil.syncLapisToClients(packet.enchantingTableBlockPos, packet.lapisCount);
+			ClientUtil.syncLapisToClients(packet.lapisCount, new BlockPos(packet.enchantingTableXPosition, packet.enchantingTableYPosition, packet.enchantingTableZPosition));
 		}
 	}
 }

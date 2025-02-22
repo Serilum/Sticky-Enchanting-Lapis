@@ -4,6 +4,7 @@ import com.natamus.collective.implementations.networking.api.Dispatcher;
 import com.natamus.stickyenchantinglapis.data.Variables;
 import com.natamus.stickyenchantinglapis.networking.packets.ToClientReceiveLapisCountPacket;
 import com.natamus.stickyenchantinglapis.util.Util;
+import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.Container;
 import net.minecraft.world.entity.player.Inventory;
@@ -66,7 +67,8 @@ public class EnchantmentMenuMixin {
 			Util.saveLapisCount(level, enchantingTableBlockEntity, lapisCount);
 
 			if (!level.isClientSide) {
-				Dispatcher.sendToClientsInLevel(new ToClientReceiveLapisCountPacket(enchantingTableBlockEntity.getBlockPos(), lapisCount), (ServerLevel)level);
+				BlockPos enchantingTableBlockPos = enchantingTableBlockEntity.getBlockPos();
+				Dispatcher.sendToClientsInLevel(new ToClientReceiveLapisCountPacket(lapisCount, enchantingTableBlockPos.getX(), enchantingTableBlockPos.getY(), enchantingTableBlockPos.getZ()), (ServerLevel)level);
 
 				for (Player otherPlayer : level.getServer().getPlayerList().getPlayers()) {
 					UUID otherPlayerUUID = otherPlayer.getUUID();

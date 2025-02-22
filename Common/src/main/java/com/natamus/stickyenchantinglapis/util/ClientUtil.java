@@ -15,7 +15,7 @@ import net.minecraft.world.level.block.entity.EnchantingTableBlockEntity;
 import java.util.UUID;
 
 public class ClientUtil {
-	public static void syncLapisToClients(BlockPos enchantingTableBlockPos, int lapisCount) {
+	public static void syncLapisToClients(int lapisCount, BlockPos enchantingTableBlockPos) {
 		Player player = Minecraft.getInstance().player;
 		if (player != null) {
 			UUID playerUUID = player.getUUID();
