@@ -1,5 +1,5 @@
 <h2>Sticky Enchanting Lapis</h2>
-<p><a href="https://github.com/Serilum/Sticky-Enchanting-Lapis"><img src="https://serilum.com/assets/images/logo/sticky-enchanting-lapis.png"></a></p><h2>Download</h2>
+<p><a href="https://github.com/Serilum/Sticky-Enchanting-Lapis"><img src="https://workflow.serilum.com/web/logo/128/sticky-enchanting-lapis.png" width="100" height="100"></a></p><h2>Download</h2>
 <p>You can download Sticky Enchanting Lapis on CurseForge and Modrinth:</p><p>&nbsp;&nbsp;CurseForge: &nbsp;&nbsp;<a href="https://curseforge.com/minecraft/mc-mods/sticky-enchanting-lapis">https://curseforge.com/minecraft/mc-mods/sticky-enchanting-lapis</a><br>&nbsp;&nbsp;Modrinth: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://modrinth.com/mod/sticky-enchanting-lapis">https://modrinth.com/mod/sticky-enchanting-lapis</a></p>
 <h2>Issue Tracker</h2>
 <p>To keep a better overview of all mods, the issue tracker is located in a separate repository.<br>&nbsp;&nbsp;For issues, ideas, suggestions or anything else, please follow this link:</p>
