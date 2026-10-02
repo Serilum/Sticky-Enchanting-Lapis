@@ -1,9 +1,9 @@
-package com.natamus.stickyenchantinglapis.networking.packets;
+package com.serilum.stickyenchantinglapis.networking.packets;
 
 import com.natamus.collective.implementations.networking.data.PacketContext;
 import com.natamus.collective.implementations.networking.data.Side;
-import com.natamus.stickyenchantinglapis.util.ClientUtil;
-import com.natamus.stickyenchantinglapis.util.Reference;
+import com.serilum.stickyenchantinglapis.util.ClientUtil;
+import com.serilum.stickyenchantinglapis.util.Reference;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;

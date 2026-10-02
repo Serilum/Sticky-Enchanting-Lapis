@@ -1,8 +1,8 @@
-package com.natamus.stickyenchantinglapis;
+package com.serilum.stickyenchantinglapis;
 
 import com.natamus.collective.check.RegisterMod;
 import com.natamus.collective.check.ShouldLoadCheck;
-import com.natamus.stickyenchantinglapis.util.Reference;
+import com.serilum.stickyenchantinglapis.util.Reference;
 import net.fabricmc.api.ModInitializer;
 
 public class ModFabric implements ModInitializer {
