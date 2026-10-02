@@ -1,4 +1,4 @@
-package com.natamus.stickyenchantinglapis.mixin;
+package com.serilum.stickyenchantinglapis.mixin;
 
 import net.minecraft.world.Container;
 import net.minecraft.world.inventory.EnchantmentMenu;

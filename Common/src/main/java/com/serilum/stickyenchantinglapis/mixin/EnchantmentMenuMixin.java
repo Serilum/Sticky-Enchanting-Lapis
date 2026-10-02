@@ -1,9 +1,9 @@
-package com.natamus.stickyenchantinglapis.mixin;
+package com.serilum.stickyenchantinglapis.mixin;
 
 import com.natamus.collective.implementations.networking.api.Dispatcher;
-import com.natamus.stickyenchantinglapis.data.Variables;
-import com.natamus.stickyenchantinglapis.networking.packets.ToClientReceiveLapisCountPacket;
-import com.natamus.stickyenchantinglapis.util.Util;
+import com.serilum.stickyenchantinglapis.data.Variables;
+import com.serilum.stickyenchantinglapis.networking.packets.ToClientReceiveLapisCountPacket;
+import com.serilum.stickyenchantinglapis.util.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.Container;
