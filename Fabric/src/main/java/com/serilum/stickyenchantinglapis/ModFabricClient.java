@@ -1,7 +1,7 @@
-package com.natamus.stickyenchantinglapis;
+package com.serilum.stickyenchantinglapis;
 
 import net.fabricmc.api.ClientModInitializer;
-import com.natamus.stickyenchantinglapis.util.Reference;
+import com.serilum.stickyenchantinglapis.util.Reference;
 import com.natamus.collective.check.ShouldLoadCheck;
 
 public class ModFabricClient implements ClientModInitializer {

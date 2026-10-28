@@ -1,6 +1,6 @@
-package com.natamus.stickyenchantinglapis.util;
+package com.serilum.stickyenchantinglapis.util;
 
-import com.natamus.stickyenchantinglapis.data.Variables;
+import com.serilum.stickyenchantinglapis.data.Variables;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.component.DataComponentMap;
 import net.minecraft.core.component.DataComponents;

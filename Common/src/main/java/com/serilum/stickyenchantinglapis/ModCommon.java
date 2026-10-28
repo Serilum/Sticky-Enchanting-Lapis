@@ -1,6 +1,6 @@
-package com.natamus.stickyenchantinglapis;
+package com.serilum.stickyenchantinglapis;
 
-import com.natamus.stickyenchantinglapis.networking.PacketRegistration;
+import com.serilum.stickyenchantinglapis.networking.PacketRegistration;
 
 public class ModCommon {
 

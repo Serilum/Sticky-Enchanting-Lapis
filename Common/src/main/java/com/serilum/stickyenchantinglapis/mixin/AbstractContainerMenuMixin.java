@@ -1,6 +1,6 @@
-package com.natamus.stickyenchantinglapis.mixin;
+package com.serilum.stickyenchantinglapis.mixin;
 
-import com.natamus.stickyenchantinglapis.util.Util;
+import com.serilum.stickyenchantinglapis.util.Util;
 import net.minecraft.world.Container;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;

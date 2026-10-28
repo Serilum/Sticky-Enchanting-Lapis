@@ -1,4 +1,4 @@
-package com.natamus.stickyenchantinglapis.data;
+package com.serilum.stickyenchantinglapis.data;
 
 import net.minecraft.core.BlockPos;
 

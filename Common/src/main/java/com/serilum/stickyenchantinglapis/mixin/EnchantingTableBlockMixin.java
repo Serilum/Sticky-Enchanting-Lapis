@@ -1,6 +1,6 @@
-package com.natamus.stickyenchantinglapis.mixin;
+package com.serilum.stickyenchantinglapis.mixin;
 
-import com.natamus.stickyenchantinglapis.data.Variables;
+import com.serilum.stickyenchantinglapis.data.Variables;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
